@@ -10,4 +10,4 @@ patches:
   patch: |-
     - op: replace
       path: /spec/ports/0/nodePort
-      value: 30001
+      value: 30082

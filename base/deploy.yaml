@@ -13,7 +13,7 @@ spec:
         app: rick-and-morty
     spec:
       containers:
-      - name: nginx 
+      - name: nginx
         image: public.ecr.aws/nginx/nginx:placeholder
         volumeMounts:
         - name: content
