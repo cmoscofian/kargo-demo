@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rick-and-morty
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rick-and-morty
+  template:
+    metadata:
+      labels:
+        app: rick-and-morty
+    spec:
+      containers:
+      - name: nginx 
+        image: public.ecr.aws/nginx/nginx:placeholder
+        volumeMounts:
+        - name: content
+          mountPath: /usr/share/nginx/html
+          readOnly: true
+      volumes:
+      - name: content
+        configMap:
+          name: rick-and-morty-cm
